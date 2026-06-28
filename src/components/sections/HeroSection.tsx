@@ -1,12 +1,81 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, ArrowRight, ShieldCheck, Target, Droplets, ThumbsUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const HeroSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <section className="relative w-full h-[100vh] min-h-[850px] flex flex-col justify-center overflow-hidden bg-[#050B14]">
+      
+      {/* Premium Water Drop Loading Animation */}
+      <div className={`absolute inset-0 z-20 flex items-center justify-center bg-[#050B14] transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className="relative flex flex-col items-center justify-center w-64 h-64">
+          
+          {/* Falling Water Drop */}
+          <motion.div
+            animate={{
+              y: [-80, 20],
+              opacity: [0, 1, 0],
+              scaleY: [1.2, 0.8],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeIn"
+            }}
+            className="absolute z-10"
+          >
+            <div 
+              className="w-6 h-6 bg-gradient-to-br from-cyan-200 via-blue-400 to-blue-600 shadow-[0_0_25px_rgba(56,189,248,0.8)]" 
+              style={{ borderRadius: '0 50% 50% 50%', transform: 'rotate(45deg)' }} 
+            />
+          </motion.div>
+          
+          {/* Splash Ripple 1 */}
+          <motion.div
+            animate={{
+              scale: [0, 4],
+              opacity: [0, 1, 0],
+              borderWidth: ["3px", "1px"]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: 0.7
+            }}
+            className="absolute top-[135px] w-12 h-4 border-cyan-400 rounded-[50%]"
+          />
+          
+          {/* Splash Ripple 2 */}
+          <motion.div
+            animate={{
+              scale: [0, 6],
+              opacity: [0, 0.5, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: 0.9
+            }}
+            className="absolute top-[135px] w-12 h-4 border border-blue-500 rounded-[50%]"
+          />
+
+          <motion.div
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-8 text-cyan-400/80 text-[11px] font-bold uppercase tracking-[0.4em]"
+          >
+            Tapping Source
+          </motion.div>
+        </div>
+      </div>
+
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video 
@@ -14,7 +83,8 @@ export const HeroSection = () => {
           loop 
           muted 
           playsInline 
-          className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-60"
+          onCanPlayThrough={() => setIsVideoLoaded(true)}
+          className={`absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-60 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-60' : 'opacity-0'}`}
         >
           <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/hero_combined.mp4" type="video/mp4" />
         </video>
