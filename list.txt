@@ -1,0 +1,2 @@
+file 'C:/Users/user/Desktop/Projects/kanakadurga-website/public/videos/Create_a_second_ultra_photo.mp4'
+file 'C:/Users/user/Desktop/Projects/kanakadurga-website/public/videos/continue_the_video_with_title.mp4'
