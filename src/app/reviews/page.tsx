@@ -1,6 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ImageWithLoader } from "@/components/common/ImageWithLoader";
 
 export const metadata: Metadata = {
   title: "Client Reviews | Kanakadurga Borewells",
@@ -161,7 +161,7 @@ export default function ReviewsPage() {
             if (item.type === 'image') {
               return (
                 <div key={item.id} className="break-inside-avoid rounded-3xl overflow-hidden relative group aspect-[4/5] shadow-2xl">
-                  <Image 
+                  <ImageWithLoader 
                     src={item.src!} 
                     alt={item.alt!} 
                     fill 

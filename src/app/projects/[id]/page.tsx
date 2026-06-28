@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
+import { ImageWithLoader } from '@/components/common/ImageWithLoader';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle2, MapPin, Droplets, ArrowDownToLine, Phone } from 'lucide-react';
 import { projectsData } from '@/lib/projectsData';
@@ -37,7 +37,7 @@ export default function ProjectDetail() {
     <main className="min-h-screen relative bg-blue-950 selection:bg-yellow-500/30">
       {/* Full-Screen Background Image with Premium Gradient Overlay */}
       <div className="fixed inset-0 w-full h-full z-0">
-        <Image
+        <ImageWithLoader
           src={project.image}
           alt={project.title}
           fill

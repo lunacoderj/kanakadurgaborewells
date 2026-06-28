@@ -1,7 +1,7 @@
 'use client';
 
 import { ShieldCheck, Clock, TrendingUp, Droplets, Medal, CheckCircle2 } from 'lucide-react';
-import Image from 'next/image';
+import { ImageWithLoader } from '@/components/common/ImageWithLoader';
 
 export const WhyChooseUsSection = () => {
   return (
@@ -122,7 +122,7 @@ export const WhyChooseUsSection = () => {
               { src: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/bill.jpeg', label: 'Transparent Billing' }
             ].map((doc, idx) => (
               <div key={idx} className="relative rounded-2xl overflow-hidden group aspect-[3/4] border border-white/10 hover:border-yellow-500/50 transition-colors">
-                <Image 
+                <ImageWithLoader 
                   src={doc.src} 
                   alt={doc.label} 
                   fill

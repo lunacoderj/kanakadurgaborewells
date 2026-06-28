@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { ImageWithLoader } from '@/components/common/ImageWithLoader';
 
 export const ProcessSection = () => {
   const steps = [
@@ -39,7 +39,7 @@ export const ProcessSection = () => {
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center group">
                 <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-8 shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2 border-4 border-white bg-white">
-                  <Image
+                  <ImageWithLoader
                     src={step.image}
                     alt={step.title}
                     fill
