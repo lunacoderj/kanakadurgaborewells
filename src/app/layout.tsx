@@ -6,6 +6,7 @@ import { MobileNav } from "@/components/Navigation/MobileNav";
 import { FloatingContactBar } from "@/components/common/FloatingContactBar";
 import { Footer } from "@/components/common/Footer";
 import { Preloader } from "@/components/common/Preloader";
+import { SmoothScroll } from "@/components/common/SmoothScroll";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,14 +35,16 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen flex flex-col transition-colors duration-300 selection:bg-brand-gold/30 selection:text-brand-navy overflow-x-hidden">
-        <Preloader />
-        <DesktopNav />
-        <MobileNav />
-        <main className="flex-grow w-full relative overflow-hidden">
-          {children}
-        </main>
-        <Footer />
-        <FloatingContactBar />
+        <SmoothScroll>
+          <Preloader />
+          <DesktopNav />
+          <MobileNav />
+          <main className="flex-grow w-full relative overflow-hidden">
+            {children}
+          </main>
+          <Footer />
+          <FloatingContactBar />
+        </SmoothScroll>
       </body>
     </html>
   );
