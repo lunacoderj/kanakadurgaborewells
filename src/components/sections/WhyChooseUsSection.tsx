@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { ShieldCheck, Clock, TrendingUp, Droplets, Medal, CheckCircle2 } from 'lucide-react';
 import { ImageWithLoader } from '@/components/common/ImageWithLoader';
 
 export const WhyChooseUsSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <section className="py-24 bg-[#0a1425] relative overflow-hidden">
       {/* Background Ambience */}
@@ -65,7 +68,7 @@ export const WhyChooseUsSection = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
                 {['Modern Sensor Rigs', 'High-Pressure Compressors', 'Expert Geologists', 'Certified Operators'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                     <CheckCircle2 className="w-5 h-5 text-yellow-400 flex-shrink-0" />
                     <span className="text-gray-300 font-medium">{item}</span>
                   </div>
                 ))}
@@ -78,13 +81,29 @@ export const WhyChooseUsSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-blue-500 to-yellow-500 opacity-30 blur-xl animate-[pulse_4s_ease-in-out_infinite]"></div>
               
               {/* Main Video Container */}
-              <div className="absolute inset-[2px] rounded-[1.4rem] overflow-hidden bg-black z-10 flex items-center justify-center">
+              <div className="absolute inset-[2px] rounded-[1.4rem] overflow-hidden bg-[#080E17] z-10 flex items-center justify-center">
+                 
+                 {/* Cinematic Loading Animation */}
+                 {!isVideoLoaded && (
+                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#080E17] z-20">
+                     <div className="relative flex items-center justify-center mb-6">
+                       <div className="w-16 h-16 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full animate-spin"></div>
+                       <div className="absolute w-10 h-10 border-4 border-cyan-500/20 border-b-cyan-500 rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
+                       <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                     </div>
+                     <p className="text-yellow-500/60 text-[10px] uppercase tracking-[0.3em] font-semibold animate-pulse">
+                       Loading Brand
+                     </p>
+                   </div>
+                 )}
+
                  <video 
                     autoPlay 
                     loop 
                     muted 
-                    playsInline 
-                    className="w-full h-full object-cover md:object-contain opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 bg-black"
+                    playsInline
+                    onCanPlay={() => setIsVideoLoaded(true)}
+                    className={`w-full h-full object-cover md:object-contain transition-all duration-1000 bg-black ${isVideoLoaded ? 'opacity-80 group-hover:scale-105 group-hover:opacity-100' : 'opacity-0'}`}
                   >
                     <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/logovideo.mp4" type="video/mp4" />
                  </video>

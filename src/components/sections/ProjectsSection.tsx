@@ -1,18 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { projectsData } from '@/lib/projectsData';
 
 export const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('All');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const categories = ['All', 'Residential', 'Agricultural', 'Industrial'];
   
   const filteredProjects = activeTab === 'All' 
     ? projectsData 
     : projectsData.filter(p => p.category === activeTab);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { current } = scrollContainerRef;
+      const scrollAmount = window.innerWidth < 640 ? window.innerWidth * 0.85 : 450 + 24;
+      current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -52,8 +64,29 @@ export const ProjectsSection = () => {
 
         {/* Premium Carousel */}
         <div className="relative group mt-8">
+          
+          {/* Navigation Controls (Left/Right Centered with Glow) */}
+          <button 
+            onClick={() => scroll('left')}
+            aria-label="Scroll left to see previous projects"
+            className="absolute left-4 md:left-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-0 group-hover:opacity-100"
+          >
+            <ChevronLeft className="w-6 h-6 -ml-1" />
+          </button>
+          <button 
+            onClick={() => scroll('right')}
+            aria-label="Scroll right to see more projects"
+            className="absolute right-4 md:right-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-0 group-hover:opacity-100"
+          >
+            <ChevronRight className="w-6 h-6 ml-1" />
+          </button>
+
           {/* Scroll Container */}
-          <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden px-2 md:px-6" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {filteredProjects.map((project) => (
               <Link href={`/projects/${project.id}`} key={project.id} className="snap-center shrink-0 w-[85vw] sm:w-[350px] md:w-[450px] group/card relative h-[450px] md:h-[500px] rounded-[2.5rem] overflow-hidden bg-gray-100 block shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-200">
                 {/* Image */}

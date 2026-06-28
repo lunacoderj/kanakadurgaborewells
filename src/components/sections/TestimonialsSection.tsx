@@ -71,51 +71,53 @@ export const TestimonialsSection = () => {
               <h3 className="text-3xl md:text-5xl font-black">
                 Trusted by 1000+ Happy Clients
               </h3>
-              
-              {/* Navigation Controls */}
-              <div className="flex gap-3 shrink-0">
-                <button 
-                  onClick={() => scroll('left')}
-                  className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
-                >
-                  <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                </button>
-                <button 
-                  onClick={() => scroll('right')}
-                  className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
-                >
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
             </div>
             
-            {/* Horizontal Scrollable Container */}
-            <div 
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar" 
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-            >
-              {reviews.map((review) => (
-                <div 
-                  key={review.id} 
-                  className="snap-start shrink-0 w-[85vw] sm:w-[350px] bg-white text-gray-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      ))}
+            <div className="relative group w-full">
+              {/* Navigation Controls (Left/Right Centered with Glow) */}
+              <button 
+                onClick={() => scroll('left')}
+                aria-label="Scroll left to see previous reviews"
+                className="absolute left-2 md:left-4 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+              >
+                <ChevronLeft className="w-6 h-6 -ml-1" />
+              </button>
+              <button 
+                onClick={() => scroll('right')}
+                aria-label="Scroll right to see more reviews"
+                className="absolute right-2 md:right-4 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+              >
+                <ChevronRight className="w-6 h-6 ml-1" />
+              </button>
+
+              {/* Horizontal Scrollable Container */}
+              <div 
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar px-2" 
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+              >
+                {reviews.map((review) => (
+                  <div 
+                    key={review.id} 
+                    className="snap-start shrink-0 w-[85vw] sm:w-[350px] bg-white text-gray-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mb-6 italic leading-relaxed">
+                        "{review.text}"
+                      </p>
                     </div>
-                    <p className="text-gray-600 mb-6 italic leading-relaxed">
-                      "{review.text}"
-                    </p>
+                    <div>
+                      <h4 className="font-bold text-blue-950 text-lg">{review.author}</h4>
+                      <p className="text-sm text-gray-500">{review.location}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-blue-950 text-lg">{review.author}</h4>
-                    <p className="text-sm text-gray-500">{review.location}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 

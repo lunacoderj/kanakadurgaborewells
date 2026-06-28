@@ -123,29 +123,30 @@ export const OurWorksSection = () => {
             Experience our dedication to precision and excellence through a curated visual journey of our most challenging and rewarding borewell field operations.
           </p>
         </div>
-        
-        {/* Navigation Controls */}
-        <div className="flex gap-4 shrink-0">
-          <button 
-            onClick={() => scroll('left')}
-            className="w-14 h-14 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
-          >
-            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-          </button>
-          <button 
-            onClick={() => scroll('right')}
-            className="w-14 h-14 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
-          >
-            <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
       </div>
 
-      <div className="mt-16 md:mt-4 w-full">
+      <div className="mt-16 md:mt-4 w-full relative group">
+        
+        {/* Navigation Controls (Left/Right Centered with Glow) */}
+        <button 
+          onClick={() => scroll('left')}
+          aria-label="Scroll left to see previous works"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+        >
+          <ChevronLeft className="w-8 h-8 -ml-1" />
+        </button>
+        <button 
+          onClick={() => scroll('right')}
+          aria-label="Scroll right to see more works"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+        >
+          <ChevronRight className="w-8 h-8 ml-1" />
+        </button>
+
         {/* Scrollable Row */}
         <div 
           ref={scrollContainerRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory py-4 scrollbar-hide items-center"
+          className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory py-4 scrollbar-hide items-center px-4 md:px-16"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           {videos.map((src, i) => (

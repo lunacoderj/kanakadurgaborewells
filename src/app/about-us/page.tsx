@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function AboutUs() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [isLogoVideoLoaded, setIsLogoVideoLoaded] = useState(false);
 
   const values = [
     {
@@ -40,13 +41,30 @@ export default function AboutUs() {
     <div className="bg-[#050B14] min-h-screen text-white pt-24 pb-32 overflow-hidden">
       {/* Hero Section with Video */}
       <div className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center mb-24">
+        
+        {/* Cinematic Loading Animation for Hero Background */}
+        {!isLogoVideoLoaded && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050B14] z-20">
+            <div className="relative flex items-center justify-center mb-6">
+              <div className="w-20 h-20 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full animate-spin"></div>
+              <div className="absolute w-12 h-12 border-4 border-cyan-500/20 border-b-cyan-500 rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
+              <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+            </div>
+            <p className="text-yellow-500/60 text-xs uppercase tracking-[0.4em] font-semibold animate-pulse">
+              Loading Experience
+            </p>
+          </div>
+        )}
+
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video 
             autoPlay 
             loop 
             muted 
             playsInline 
-            className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-30"
+            poster="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/hero_poster.jpg"
+            onCanPlay={() => setIsLogoVideoLoaded(true)}
+            className={`absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-1000 ${isLogoVideoLoaded ? 'opacity-30' : 'opacity-0'}`}
           >
             <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/logovideo.mp4" type="video/mp4" />
           </video>
