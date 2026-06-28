@@ -8,6 +8,7 @@ const WhyChooseUsSection = dynamic(() => import("@/components/sections/WhyChoose
 const OurWorksSection = dynamic(() => import("@/components/sections/OurWorksSection").then(m => m.OurWorksSection), { loading: () => <GenericGridSkeleton /> });
 const ProjectsSection = dynamic(() => import("@/components/sections/ProjectsSection").then(m => m.ProjectsSection), { loading: () => <GenericGridSkeleton /> });
 const EquipmentsSection = dynamic(() => import("@/components/sections/EquipmentsSection").then(m => m.EquipmentsSection), { loading: () => <GenericGridSkeleton /> });
+const LogoVideoSection = dynamic(() => import("@/components/sections/LogoVideoSection").then(m => m.LogoVideoSection), { loading: () => <SplitSkeleton /> });
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection").then(m => m.TestimonialsSection), { loading: () => <GenericGridSkeleton /> });
 const ServiceAreasSection = dynamic(() => import("@/components/sections/ServiceAreasSection").then(m => m.ServiceAreasSection), { loading: () => <SplitSkeleton /> });
 const FaqSection = dynamic(() => import("@/components/sections/FaqSection").then(m => m.FaqSection), { loading: () => <SplitSkeleton /> });
