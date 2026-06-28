@@ -21,7 +21,7 @@ export default function ReviewsPage() {
     {
       id: 'img1',
       type: "image",
-      src: "/images/services/agricultural-borewells.jpg",
+      src: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/agricultural-borewells.jpg",
       alt: "Crystal clear water gushing from newly drilled borewell"
     },
     {
@@ -45,7 +45,7 @@ export default function ReviewsPage() {
     {
       id: 'img2',
       type: "image",
-      src: "/images/services/borewell-drilling.jpg",
+      src: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-drilling.jpg",
       alt: "Happy farmer in lush green field after successful borewell installation"
     },
     {
@@ -69,7 +69,7 @@ export default function ReviewsPage() {
     {
       id: 'img3',
       type: "image",
-      src: "/images/projects/proj1.png",
+      src: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/proj1.png",
       alt: "Heavy duty machinery at sunset"
     },
     {
@@ -93,7 +93,7 @@ export default function ReviewsPage() {
     {
       id: 'img4',
       type: "image",
-      src: "/images/projects/proj2.png",
+      src: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/proj2.png",
       alt: "Water splash"
     },
     {

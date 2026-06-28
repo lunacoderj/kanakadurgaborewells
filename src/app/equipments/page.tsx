@@ -13,7 +13,7 @@ export default function EquipmentsPage() {
     { 
       id: "rig",
       title: 'Advanced Drilling Rigs', 
-      image: '/images/equipments/rig.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/rig.jpg',
       icon: <Settings2 className="w-8 h-8 text-yellow-400" />,
       description: 'High-penetration hydraulic rigs capable of drilling through all geological formations with extreme precision and speed.',
       points: [
@@ -26,7 +26,7 @@ export default function EquipmentsPage() {
     { 
       id: "machine",
       title: 'Borewell Machines', 
-      image: '/images/equipments/machine.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/machine.jpg',
       icon: <Activity className="w-8 h-8 text-yellow-400" />,
       description: 'Robust engineering tailored for reaching deeper water tables efficiently, built to withstand continuous heavy-duty operation.',
       points: [
@@ -39,7 +39,7 @@ export default function EquipmentsPage() {
     { 
       id: "compressor",
       title: 'Air Compressors', 
-      image: '/images/equipments/compressor.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/compressor.jpg',
       icon: <Zap className="w-8 h-8 text-yellow-400" />,
       description: 'Heavy-duty high-pressure systems ensuring continuous airflow for both intensive cleaning and rapid drilling processes.',
       points: [
@@ -52,7 +52,7 @@ export default function EquipmentsPage() {
     { 
       id: "vehicle",
       title: 'Support Vehicles', 
-      image: '/images/equipments/vehicle.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/vehicle.jpg',
       icon: <ShieldCheck className="w-8 h-8 text-yellow-400" />,
       description: 'Our all-terrain transport fleet ensures rapid deployment of materials, casing pipes, and crew to any remote site.',
       points: [
@@ -65,7 +65,7 @@ export default function EquipmentsPage() {
     { 
       id: "pump",
       title: 'Submersible Pumps', 
-      image: '/images/equipments/pump.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/pump.jpg',
       icon: <Droplets className="w-8 h-8 text-yellow-400" />,
       description: 'High-efficiency extraction units designed for longevity and optimal water output across varying depth levels.',
       points: [
@@ -78,7 +78,7 @@ export default function EquipmentsPage() {
     { 
       id: "cleaning",
       title: 'Cleaning Equipment', 
-      image: '/images/equipments/cleaning.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/cleaning.jpg',
       icon: <Wrench className="w-8 h-8 text-yellow-400" />,
       description: 'Advanced flushing and desilting tools to remove blockages and restore your borewell to its peak performance.',
       points: [

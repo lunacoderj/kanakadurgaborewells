@@ -7,7 +7,7 @@ export const EquipmentsSection = () => {
   const equipments = [
     { 
       name: 'Advanced Drilling Rigs', 
-      image: '/images/equipments/rig.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/rig.jpg',
       icon: <Settings2 className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'High-penetration hydraulic rigs capable of drilling through all geological formations with extreme precision.',
       link: '/equipments#rig',
@@ -16,7 +16,7 @@ export const EquipmentsSection = () => {
     },
     { 
       name: 'Borewell Machines', 
-      image: '/images/equipments/machine.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/machine.jpg',
       icon: <Activity className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'Robust engineering tailored for reaching deeper water tables efficiently.',
       link: '/equipments#machine',
@@ -25,7 +25,7 @@ export const EquipmentsSection = () => {
     },
     { 
       name: 'Air Compressors', 
-      image: '/images/equipments/compressor.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/compressor.jpg',
       icon: <Zap className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'Heavy-duty high-pressure systems ensuring continuous airflow for cleaning and drilling.',
       link: '/equipments#compressor',
@@ -34,7 +34,7 @@ export const EquipmentsSection = () => {
     },
     { 
       name: 'Support Vehicles', 
-      image: '/images/equipments/vehicle.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/vehicle.jpg',
       icon: <ShieldCheck className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'All-terrain transport fleet for rapid deployment of materials and crew.',
       link: '/equipments#vehicle',
@@ -43,7 +43,7 @@ export const EquipmentsSection = () => {
     },
     { 
       name: 'Submersible Pumps', 
-      image: '/images/equipments/pump.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/pump.jpg',
       icon: <Droplets className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'High-efficiency extraction units designed for longevity and optimal water output.',
       link: '/equipments#pump',
@@ -52,7 +52,7 @@ export const EquipmentsSection = () => {
     },
     { 
       name: 'Cleaning Equipment', 
-      image: '/images/equipments/cleaning.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/cleaning.jpg',
       icon: <Wrench className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
       desc: 'Advanced tools to remove silt and restore peak borewell performance.',
       link: '/equipments#cleaning',

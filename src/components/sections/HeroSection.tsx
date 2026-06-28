@@ -16,11 +16,11 @@ export const HeroSection = () => {
           playsInline 
           className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-60"
         >
-          <source src="/videos/hero_combined.mp4" type="video/mp4" />
+          <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/hero_combined.mp4" type="video/mp4" />
         </video>
         
         {/* Animated Glow Orbs & Grid */}
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-[0.03] bg-repeat bg-[length:40px_40px]"></div>
+        <div className="absolute inset-0 bg-[url('https://gf2wtazfdibnozca.public.blob.vercel-storage.com/grid.svg')] opacity-[0.03] bg-repeat bg-[length:40px_40px]"></div>
         
         {/* Deep Vignette / Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050B14]/80 via-[#050B14]/40 to-[#050B14] z-10"></div>

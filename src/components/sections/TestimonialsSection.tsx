@@ -1,9 +1,23 @@
 'use client';
 
-import { Star, ChevronRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Star, ChevronRight, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const TestimonialsSection = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { current } = scrollContainerRef;
+      const scrollAmount = window.innerWidth < 640 ? window.innerWidth * 0.85 : 350 + 24; // Card width + gap
+      current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const reviews = [
     {
       id: 1,
@@ -49,20 +63,42 @@ export const TestimonialsSection = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           
           {/* Left: Reviews Carousel */}
-          <div className="lg:w-2/3 overflow-hidden">
+          <div className="w-full lg:w-2/3 overflow-hidden">
             <h2 className="text-sm md:text-base font-bold text-yellow-500 mb-2 uppercase tracking-widest">
               WHAT OUR CLIENTS SAY
             </h2>
-            <h3 className="text-3xl md:text-5xl font-black mb-10">
-              Trusted by 1000+ Happy Clients
-            </h3>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
+              <h3 className="text-3xl md:text-5xl font-black">
+                Trusted by 1000+ Happy Clients
+              </h3>
+              
+              {/* Navigation Controls */}
+              <div className="flex gap-3 shrink-0">
+                <button 
+                  onClick={() => scroll('left')}
+                  className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
+                >
+                  <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                </button>
+                <button 
+                  onClick={() => scroll('right')}
+                  className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 group shadow-lg"
+                >
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
             
             {/* Horizontal Scrollable Container */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
               {reviews.map((review) => (
                 <div 
                   key={review.id} 
-                  className="snap-start shrink-0 w-[300px] sm:w-[350px] bg-white text-gray-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between"
+                  className="snap-start shrink-0 w-[85vw] sm:w-[350px] bg-white text-gray-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex gap-1 mb-4">

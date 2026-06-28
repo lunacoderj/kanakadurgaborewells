@@ -68,7 +68,7 @@ export const Footer = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 relative bg-white/5 backdrop-blur-md rounded-xl overflow-hidden flex items-center justify-center p-1 border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-                <Image src="/images/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="80px" className="object-cover" />
+                <Image src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="80px" className="object-contain p-1" />
               </div>
               <div>
                 <div className="font-black text-white text-xl tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">KANAKADURGA</div>

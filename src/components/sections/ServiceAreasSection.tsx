@@ -132,7 +132,7 @@ export const ServiceAreasSection = () => {
               {/* We can use the existing map image with a blend mode for a tech feel */}
               <div 
                  className="absolute inset-8 bg-contain bg-no-repeat bg-center opacity-40 mix-blend-multiply drop-shadow-2xl filter contrast-125 hue-rotate-15"
-                 style={{ backgroundImage: `url('/images/india-map-graphic.png')` }}
+                 style={{ backgroundImage: `url('https://gf2wtazfdibnozca.public.blob.vercel-storage.com/india-map-graphic.png')` }}
                />
 
               {/* Data Nodes */}

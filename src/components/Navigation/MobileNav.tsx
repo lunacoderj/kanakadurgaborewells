@@ -103,7 +103,7 @@ export const MobileNav = () => {
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2 z-50 shrink-0">
           <div className="w-8 h-8 relative shrink-0 bg-white/5 rounded-lg p-1 border border-cyan-500/20">
-            <Image src="/images/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="32px" className="object-contain" />
+            <Image src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="32px" className="object-contain" priority />
           </div>
           <div className="flex flex-col w-[80px] sm:w-[120px]">
             <div className="font-black text-[11px] sm:text-xs leading-none tracking-wider text-white truncate">KANAKADURGA</div>

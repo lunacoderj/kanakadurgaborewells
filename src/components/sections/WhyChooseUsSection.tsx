@@ -29,7 +29,7 @@ export const WhyChooseUsSection = () => {
           
           {/* Main Showcase (Spans 2 cols, 2 rows) */}
           <div className="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-3xl overflow-hidden group shadow-2xl">
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: "url('/images/why-choose-us-rig.jpg')", backgroundColor: "#1e293b" }}></div>
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: "url('https://gf2wtazfdibnozca.public.blob.vercel-storage.com/why-choose-us-rig.jpg')", backgroundColor: "#1e293b" }}></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a1425] via-[#0a1425]/40 to-transparent"></div>
             
             <div className="absolute bottom-0 left-0 p-8">
@@ -59,7 +59,6 @@ export const WhyChooseUsSection = () => {
             <p className="text-gray-400 font-medium tracking-wide uppercase text-sm">Success Guarantee</p>
           </div>
 
-          {/* Info Card - Wide */}
           <div className="md:col-span-2 lg:col-span-2 relative rounded-3xl p-8 bg-gradient-to-br from-blue-900/40 to-transparent border border-blue-500/30 backdrop-blur-md flex flex-col justify-center overflow-hidden group">
             <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-500"></div>
             <h4 className="text-2xl font-bold text-white mb-6 relative z-10">Advanced Technology & Trained Manpower</h4>
@@ -73,6 +72,36 @@ export const WhyChooseUsSection = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Transparent Business Practices Grid */}
+        <div className="mt-12">
+          <div className="text-center mb-10">
+            <h4 className="text-2xl md:text-3xl font-bold text-white mb-4">Transparent & Professional</h4>
+            <p className="text-gray-400">Clear quotations, proper billing, and professional documentation for every client.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { src: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/visitingcard.jpeg', label: 'Professional Contact' },
+              { src: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/pomplet.jpeg', label: 'Detailed Services' },
+              { src: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/quatation.jpeg', label: 'Clear Quotations' },
+              { src: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/bill.jpeg', label: 'Transparent Billing' }
+            ].map((doc, idx) => (
+              <div key={idx} className="relative rounded-2xl overflow-hidden group aspect-[3/4] border border-white/10 hover:border-yellow-500/50 transition-colors">
+                <Image 
+                  src={doc.src} 
+                  alt={doc.label} 
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 text-center">
+                  <span className="text-white font-medium text-sm drop-shadow-md">{doc.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

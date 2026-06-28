@@ -9,7 +9,7 @@ export const ServicesSection = () => {
       title: 'Borewell Drilling',
       description: 'Expert drilling services with advanced hydraulic rigs for maximum water yield in any terrain.',
       icon: <Droplets className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/borewell-drilling.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-drilling.jpg',
       link: '/services#drilling',
       colSpan: 'md:col-span-2 lg:col-span-2',
       rowSpan: 'md:row-span-1 lg:row-span-2'
@@ -18,7 +18,7 @@ export const ServicesSection = () => {
       title: 'Borewell Cleaning',
       description: 'High-pressure air compressor cleaning to restore water yield and remove blockages.',
       icon: <Settings className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/borewell-cleaning.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-cleaning.jpg',
       link: '/services#cleaning',
       colSpan: 'col-span-1',
       rowSpan: 'row-span-1'
@@ -27,7 +27,7 @@ export const ServicesSection = () => {
       title: 'Borewell Repair',
       description: 'Comprehensive repair and maintenance services to fix any borewell issues efficiently.',
       icon: <RefreshCw className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/borewell-repair.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-repair.jpg',
       link: '/services#repair',
       colSpan: 'col-span-1',
       rowSpan: 'row-span-1'
@@ -36,7 +36,7 @@ export const ServicesSection = () => {
       title: 'Pump Installation',
       description: 'Professional selection and installation of high-efficiency submersible pumps.',
       icon: <Wrench className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/pump-installation.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/pump-installation.jpg',
       link: '/services#pump-installation',
       colSpan: 'col-span-1',
       rowSpan: 'row-span-1'
@@ -45,7 +45,7 @@ export const ServicesSection = () => {
       title: 'Agricultural Borewells',
       description: 'High-capacity borewells tailored for irrigation and farming needs.',
       icon: <Sprout className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/agricultural-borewells.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/agricultural-borewells.jpg',
       link: '/services#agricultural',
       colSpan: 'col-span-1',
       rowSpan: 'row-span-1'
@@ -54,7 +54,7 @@ export const ServicesSection = () => {
       title: 'Commercial & Industrial',
       description: 'Heavy-duty drilling and water management solutions for large-scale operations.',
       icon: <Building2 className="w-6 h-6 text-yellow-400 group-hover:text-blue-950 transition-colors duration-300" />,
-      image: '/images/services/industrial-borewells.jpg',
+      image: 'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/industrial-borewells.jpg',
       link: '/services#industrial',
       colSpan: 'md:col-span-2 lg:col-span-1',
       rowSpan: 'row-span-1'

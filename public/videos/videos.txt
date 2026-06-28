@@ -1,2 +1,0 @@
-file 'Create_a_second_ultra_photo.mp4'
-file 'continue_the_video_with_title.mp4'

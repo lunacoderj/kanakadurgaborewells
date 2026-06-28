@@ -170,7 +170,7 @@ export const DesktopNav = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition group shrink-0">
               <div className={`w-12 h-12 relative flex-shrink-0 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
-                <Image src="/images/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="48px" className="object-contain" />
+                <Image src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/logo-transparent.png" alt="Kanakadurga Logo" fill sizes="48px" className="object-contain" priority />
               </div>
               <div className="flex flex-col">
                 <div className={`font-black text-xl leading-none tracking-wide drop-shadow-md transition-colors ${scrolled ? 'text-[#0b1120]' : 'text-white'}`}>KANAKADURGA</div>

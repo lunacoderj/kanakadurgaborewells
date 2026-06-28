@@ -7,17 +7,17 @@ export const ProcessSection = () => {
     {
       title: "1. Site Inspection & Survey",
       description: "Our experts visit your location to conduct a thorough geological survey, identifying the best spot for drilling to ensure maximum water yield.",
-      image: "/images/process/survey.png"
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/survey.png"
     },
     {
       title: "2. Drilling & Equipment Setup",
       description: "We deploy state-of-the-art hydraulic rigs and equipment tailored to your specific soil and rock conditions for efficient and safe drilling.",
-      image: "/images/process/equipment.png"
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/equipment.png"
     },
     {
       title: "3. Installation & Testing",
       description: "After drilling, we install the casing pipes, submersible pumps, and conduct rigorous yield testing to guarantee a sustainable water supply.",
-      image: "/images/process/equipment.png" // Reusing since we only have 2 process images right now
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/equipment.png" // Reusing since we only have 2 process images right now
     }
   ];
 

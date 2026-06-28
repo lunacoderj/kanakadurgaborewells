@@ -15,7 +15,7 @@ export default function ServicesPage() {
       title: "Borewell Drilling",
       description: "Expert drilling services with advanced hydraulic rigs for maximum water yield in any terrain. We ensure precision and long-lasting performance.",
       icon: <Droplets className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/borewell-drilling.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-drilling.jpg",
       points: [
         "High-performance hydraulic rigs",
         "Expert terrain analysis",
@@ -28,7 +28,7 @@ export default function ServicesPage() {
       title: "Borewell Cleaning",
       description: "High-pressure air compressor cleaning to restore water yield and remove blockages, ensuring your borewell operates at peak efficiency.",
       icon: <Settings className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/borewell-cleaning.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-cleaning.jpg",
       points: [
         "High-pressure air flushing",
         "Silt and debris removal",
@@ -41,7 +41,7 @@ export default function ServicesPage() {
       title: "Borewell Repair",
       description: "Comprehensive repair and maintenance services to fix any borewell issues efficiently, preventing complete system failures and prolonging lifespan.",
       icon: <RefreshCw className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/borewell-repair.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/borewell-repair.jpg",
       points: [
         "Motor and pump repairs",
         "Pipeline blockages fixed",
@@ -54,7 +54,7 @@ export default function ServicesPage() {
       title: "Pump Installation",
       description: "Professional selection and installation of high-efficiency submersible pumps tailored to your specific water depth and volume requirements.",
       icon: <Wrench className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/pump-installation.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/pump-installation.jpg",
       points: [
         "Submersible & jet pumps",
         "Energy-efficient models",
@@ -67,7 +67,7 @@ export default function ServicesPage() {
       title: "Agricultural Borewells",
       description: "High-capacity borewells tailored for irrigation and farming needs, providing a reliable water source to maximize crop yields year-round.",
       icon: <Sprout className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/agricultural-borewells.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/agricultural-borewells.jpg",
       points: [
         "Large diameter drilling",
         "Irrigation system integration",
@@ -80,7 +80,7 @@ export default function ServicesPage() {
       title: "Commercial & Industrial",
       description: "Heavy-duty drilling and water management solutions for large-scale operations, ensuring uninterrupted water supply for industrial processes.",
       icon: <Building2 className="w-8 h-8 text-yellow-400" />,
-      image: "/images/services/industrial-borewells.jpg",
+      image: "https://gf2wtazfdibnozca.public.blob.vercel-storage.com/industrial-borewells.jpg",
       points: [
         "High-volume water extraction",
         "Compliance with regulations",

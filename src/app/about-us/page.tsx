@@ -48,10 +48,10 @@ export default function AboutUs() {
             playsInline 
             className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-30"
           >
-            <source src="/videos/hero_combined.mp4" type="video/mp4" />
+            <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/hero_combined.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/60 to-[#050B14]/90"></div>
-          <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-[0.05] bg-repeat bg-[length:40px_40px]"></div>
+          <div className="absolute inset-0 bg-[url('https://gf2wtazfdibnozca.public.blob.vercel-storage.com/grid.svg')] opacity-[0.05] bg-repeat bg-[length:40px_40px]"></div>
         </div>
         
         <div className="relative z-10 max-w-[1000px] mx-auto px-6 text-center mt-12">
@@ -140,7 +140,7 @@ export default function AboutUs() {
                 controls={isVideoPlaying}
                 className={`w-full h-full object-cover transition-transform duration-1000 ${isVideoPlaying ? 'scale-100' : 'scale-105 group-hover:scale-100'}`}
               >
-                <source src="/videos/hero_combined.mp4" type="video/mp4" />
+                <source src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/hero_combined.mp4" type="video/mp4" />
               </video>
               
               {!isVideoPlaying && (

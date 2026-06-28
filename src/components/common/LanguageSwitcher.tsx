@@ -21,23 +21,30 @@ export default function LanguageSwitcher() {
   const [currentLang, setCurrentLang] = useState('English');
 
   useEffect(() => {
-    // Add Google Translate script
-    const addScript = document.createElement('script');
-    addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    addScript.async = true;
-    document.body.appendChild(addScript);
+    // Add Google Translate script if it doesn't exist
+    if (!document.getElementById('google-translate-script')) {
+      const addScript = document.createElement('script');
+      addScript.id = 'google-translate-script';
+      addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      addScript.async = true;
+      document.body.appendChild(addScript);
+    }
 
     // Initialize Google Translate
     window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          includedLanguages: 'en,hi,te',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
-        },
-        'google_translate_element'
-      );
+      const container = document.getElementById('google_translate_element');
+      // Only initialize if the container is empty (preventing multiple instances and stack overflow)
+      if (container && container.innerHTML.trim() === '') {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,te',
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element'
+        );
+      }
     };
 
     // Check cookie for initial language
@@ -52,9 +59,8 @@ export default function LanguageSwitcher() {
 
     // Cleanup
     return () => {
-      if (document.body.contains(addScript)) {
-        document.body.removeChild(addScript);
-      }
+      // Do not remove the script globally as it causes issues with fast refresh, 
+      // just clear the init function.
       delete window.googleTranslateElementInit;
     };
   }, []);
