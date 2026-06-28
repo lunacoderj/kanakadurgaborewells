@@ -86,10 +86,10 @@ export const FeaturesSkeleton = () => (
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] premium-border group relative overflow-hidden">
             <div className="absolute inset-0 bg-yellow-500/0 group-hover:bg-yellow-500/5 transition-colors"></div>
-            <div className={`w-14 h-14 rounded-full shimmer shrink-0 border border-yellow-500/20`} style={{ animationDelay: \`\${i * 0.1}s\` }} />
+            <div className={`w-14 h-14 rounded-full shimmer shrink-0 border border-yellow-500/20`} style={{ animationDelay: `${i * 0.1}s` }} />
             <div className="space-y-3 flex-1">
-              <div className="h-4 rounded w-3/4 shimmer" style={{ animationDelay: \`\${i * 0.15}s\` }} />
-              <div className="h-3 rounded w-1/2 shimmer" style={{ animationDelay: \`\${i * 0.2}s\` }} />
+              <div className="h-4 rounded w-3/4 shimmer" style={{ animationDelay: `${i * 0.15}s` }} />
+              <div className="h-3 rounded w-1/2 shimmer" style={{ animationDelay: `${i * 0.2}s` }} />
             </div>
           </div>
         ))}
@@ -109,14 +109,14 @@ export const GenericGridSkeleton = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {[1, 2, 3, 4, 5, 6].map(i => (
         <div key={i} className="bg-white/[0.02] backdrop-blur-sm rounded-3xl premium-border p-6 h-[420px] flex flex-col relative overflow-hidden">
-          <div className="w-full h-48 rounded-2xl mb-6 shimmer" style={{ animationDelay: \`\${i * 0.1}s\` }} />
-          <div className="h-7 w-3/4 rounded-lg mb-5 shimmer" style={{ animationDelay: \`\${i * 0.15}s\` }} />
+          <div className="w-full h-48 rounded-2xl mb-6 shimmer" style={{ animationDelay: `${i * 0.1}s` }} />
+          <div className="h-7 w-3/4 rounded-lg mb-5 shimmer" style={{ animationDelay: `${i * 0.15}s` }} />
           <div className="space-y-3 mb-8">
-            <div className="h-3 w-full rounded shimmer" style={{ animationDelay: \`\${i * 0.2}s\` }} />
-            <div className="h-3 w-full rounded shimmer" style={{ animationDelay: \`\${i * 0.2}s\` }} />
-            <div className="h-3 w-4/5 rounded shimmer" style={{ animationDelay: \`\${i * 0.2}s\` }} />
+            <div className="h-3 w-full rounded shimmer" style={{ animationDelay: `${i * 0.2}s` }} />
+            <div className="h-3 w-full rounded shimmer" style={{ animationDelay: `${i * 0.2}s` }} />
+            <div className="h-3 w-4/5 rounded shimmer" style={{ animationDelay: `${i * 0.2}s` }} />
           </div>
-          <div className="mt-auto h-12 w-36 rounded-full shimmer border border-yellow-500/20" style={{ animationDelay: \`\${i * 0.25}s\` }} />
+          <div className="mt-auto h-12 w-36 rounded-full shimmer border border-yellow-500/20" style={{ animationDelay: `${i * 0.25}s` }} />
         </div>
       ))}
     </div>
