@@ -172,10 +172,10 @@ export const HeroSection = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute bottom-6 left-0 right-0 z-40 hidden md:block"
+        className="absolute bottom-4 md:bottom-6 left-0 right-0 z-40 block"
       >
-        <div className="max-w-[1400px] mx-auto px-6">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-2xl grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-br from-white/10 to-transparent rounded-2xl flex items-center justify-center border border-white/10 shadow-inner">

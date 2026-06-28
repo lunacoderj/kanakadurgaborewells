@@ -69,14 +69,14 @@ export const ProjectsSection = () => {
           <button 
             onClick={() => scroll('left')}
             aria-label="Scroll left to see previous projects"
-            className="absolute left-4 md:left-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-0 group-hover:opacity-100"
+            className="absolute left-4 md:left-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-100 md:opacity-0 md:group-hover:opacity-100"
           >
             <ChevronLeft className="w-6 h-6 -ml-1" />
           </button>
           <button 
             onClick={() => scroll('right')}
             aria-label="Scroll right to see more projects"
-            className="absolute right-4 md:right-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-0 group-hover:opacity-100"
+            className="absolute right-4 md:right-6 top-[45%] -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 border border-blue-500/30 backdrop-blur-md flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] opacity-100 md:opacity-0 md:group-hover:opacity-100"
           >
             <ChevronRight className="w-6 h-6 ml-1" />
           </button>

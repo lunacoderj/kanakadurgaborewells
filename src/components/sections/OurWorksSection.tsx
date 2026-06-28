@@ -131,14 +131,14 @@ export const OurWorksSection = () => {
         <button 
           onClick={() => scroll('left')}
           aria-label="Scroll left to see previous works"
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-100 md:opacity-0 md:group-hover:opacity-100"
         >
           <ChevronLeft className="w-8 h-8 -ml-1" />
         </button>
         <button 
           onClick={() => scroll('right')}
           aria-label="Scroll right to see more works"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-0 group-hover:opacity-100"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-black/40 border border-yellow-500/30 backdrop-blur-md flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.8)] opacity-100 md:opacity-0 md:group-hover:opacity-100"
         >
           <ChevronRight className="w-8 h-8 ml-1" />
         </button>
