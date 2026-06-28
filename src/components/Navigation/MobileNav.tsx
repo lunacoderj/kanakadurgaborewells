@@ -35,7 +35,7 @@ export const MobileNav = () => {
       // Each icon button is around 40-44px wide
       const itemWidth = 44; 
       let count = Math.floor(availableWidth / itemWidth);
-      if (count < 1) count = 1;
+      if (count < 0) count = 0;
       if (count > navItems.length) count = navItems.length;
       setVisibleCount(count);
     };

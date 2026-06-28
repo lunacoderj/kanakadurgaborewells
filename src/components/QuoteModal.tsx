@@ -17,30 +17,37 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const phone = formData.get('phone') as string;
-    const service = formData.get('service') as string;
-    const message = formData.get('message') as string;
+    const data = {
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      service: formData.get('service') as string,
+      message: formData.get('message') as string,
+    };
 
-    const whatsappNumber = "917998998889"; // Adjust this to your actual WhatsApp number
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    const text = `*New Quote Request*
-*Name:* ${name}
-*Phone:* ${phone}
-*Service Required:* ${service || 'Not specified'}
-*Details:* ${message}`;
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-
-    // Show success animation briefly before redirecting
-    setSubmitted(true);
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setSubmitted(false);
-      onClose();
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          onClose();
+          setIsSubmitting(false);
+        }, 3000);
+      } else {
+        console.error("Failed to submit form");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (

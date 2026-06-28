@@ -33,11 +33,11 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} scroll-smooth antialiased`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-screen flex flex-col transition-colors duration-300 selection:bg-brand-gold/30 selection:text-brand-navy">
+      <body className="min-h-screen flex flex-col transition-colors duration-300 selection:bg-brand-gold/30 selection:text-brand-navy overflow-x-hidden">
         <Preloader />
         <DesktopNav />
         <MobileNav />
-        <main className="flex-grow">
+        <main className="flex-grow w-full relative overflow-hidden">
           {children}
         </main>
         <Footer />

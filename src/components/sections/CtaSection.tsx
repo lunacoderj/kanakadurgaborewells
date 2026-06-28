@@ -13,26 +13,36 @@ export const CtaSection = () => {
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const phone = formData.get("phone") as string;
-    const service = formData.get("service") as string;
+    const data = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      service: formData.get("service") as string,
+      message: "New Quote Request (CTA)"
+    };
 
-    const whatsappNumber = "917998998889"; // Adjust this to your actual WhatsApp number
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    const text = `*New Quote Request (CTA)*
-*Name:* ${name}
-*Phone:* ${phone}
-*Service Required:* ${service || 'Not specified'}`;
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-
-    setSubmitted(true);
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setSubmitted(false);
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setIsSubmitting(false);
+        }, 3000);
+      } else {
+        console.error("Failed to submit form");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
