@@ -6,9 +6,15 @@ import { Globe } from 'lucide-react';
 declare global {
   interface Window {
     google: any;
-    googleTranslateElementInit: () => void;
+    googleTranslateElementInit?: () => void;
   }
 }
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'हिंदी (Hindi)' },
+  { code: 'te', name: 'తెలుగు (Telugu)' },
+];
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,33 +40,45 @@ export default function LanguageSwitcher() {
       );
     };
 
+    // Check cookie for initial language
+    const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    if (match && match[1]) {
+      const code = match[1];
+      const foundLang = languages.find(l => l.code === code);
+      if (foundLang) {
+        setCurrentLang(foundLang.name);
+      }
+    }
+
     // Cleanup
     return () => {
-      document.body.removeChild(addScript);
+      if (document.body.contains(addScript)) {
+        document.body.removeChild(addScript);
+      }
       delete window.googleTranslateElementInit;
     };
   }, []);
 
   const changeLanguage = (langCode: string, langName: string) => {
+    // 1. Try to set via the google translate combo box
     const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
     if (selectElement) {
       selectElement.value = langCode;
-      selectElement.dispatchEvent(new Event('change'));
+      selectElement.dispatchEvent(new Event('change', { bubbles: true }));
       setCurrentLang(langName);
       setIsOpen(false);
+    } else {
+      // 2. Fallback to setting cookie and reloading
+      document.cookie = `googtrans=/en/${langCode}; path=/; domain=${window.location.hostname}`;
+      document.cookie = `googtrans=/en/${langCode}; path=/`; 
+      window.location.reload();
     }
   };
 
-  const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'hi', name: 'हिंदी (Hindi)' },
-    { code: 'te', name: 'తెలుగు (Telugu)' },
-  ];
-
   return (
     <div className="relative z-50">
-      {/* Hidden Google Translate Element */}
-      <div id="google_translate_element" className="hidden"></div>
+      {/* Hidden Google Translate Element - needs to be in DOM for Google to populate it */}
+      <div id="google_translate_element" className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden"></div>
       
       {/* Custom Dropdown Trigger */}
       <button
