@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const videos = [
@@ -14,6 +14,58 @@ const videos = [
   'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/work9.mp4',
   'https://gf2wtazfdibnozca.public.blob.vercel-storage.com/workatoffice.mp4'
 ];
+
+const VideoCard = ({ src }: { src: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => {});
+            }
+          } else {
+            if (videoRef.current) {
+              videoRef.current.pause();
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, []);
+
+  return (
+    <div 
+      ref={containerRef}
+      className="snap-center shrink-0 h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02] group relative bg-[#1a1a1a]"
+    >
+      <div className="absolute inset-0 bg-yellow-500/0 group-hover:bg-yellow-500/10 transition-colors duration-500 pointer-events-none z-10" />
+      <video 
+        ref={videoRef}
+        src={isInView ? src : undefined} 
+        preload="none"
+        muted 
+        loop 
+        playsInline 
+        className="w-auto h-full rounded-[2rem] pointer-events-none select-none" 
+      />
+    </div>
+  );
+};
 
 export const OurWorksSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -77,20 +129,7 @@ export const OurWorksSection = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           {videos.map((src, i) => (
-            <div 
-              key={i} 
-              className="snap-center shrink-0 h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02] group relative"
-            >
-              <div className="absolute inset-0 bg-yellow-500/0 group-hover:bg-yellow-500/10 transition-colors duration-500 pointer-events-none z-10" />
-              <video 
-                src={src} 
-                autoPlay 
-                muted 
-                loop 
-                playsInline 
-                className="w-auto h-full rounded-[2rem] pointer-events-none select-none" 
-              />
-            </div>
+            <VideoCard key={i} src={src} />
           ))}
         </div>
       </div>
