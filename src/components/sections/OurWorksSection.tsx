@@ -19,6 +19,7 @@ const VideoCard = ({ src }: { src: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,17 +52,36 @@ const VideoCard = ({ src }: { src: string }) => {
   return (
     <div 
       ref={containerRef}
-      className="snap-center shrink-0 h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02] group relative bg-[#1a1a1a]"
+      className="snap-center shrink-0 h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02] group relative bg-[#050B14]"
     >
-      <div className="absolute inset-0 bg-yellow-500/0 group-hover:bg-yellow-500/10 transition-colors duration-500 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-yellow-500/0 group-hover:bg-yellow-500/10 transition-colors duration-500 pointer-events-none z-20" />
+      
+      {/* Cinematic Circle Loading Animation */}
+      {isInView && !isVideoLoaded && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#080E17] z-0 rounded-[2rem]">
+          <div className="relative flex items-center justify-center mb-6">
+            {/* Outer Gold Spinner */}
+            <div className="w-16 h-16 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full animate-spin"></div>
+            {/* Inner Cyan Spinner */}
+            <div className="absolute w-10 h-10 border-4 border-cyan-500/20 border-b-cyan-500 rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
+            {/* Core dot */}
+            <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+          </div>
+          <p className="text-yellow-500/60 text-[10px] uppercase tracking-[0.3em] font-semibold animate-pulse">
+            Loading Feed
+          </p>
+        </div>
+      )}
+
       <video 
         ref={videoRef}
         src={isInView ? src : undefined} 
+        onCanPlay={() => setIsVideoLoaded(true)}
         preload="none"
         muted 
         loop 
         playsInline 
-        className="w-auto h-full rounded-[2rem] pointer-events-none select-none" 
+        className={`w-auto h-full rounded-[2rem] pointer-events-none select-none relative z-10 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`} 
       />
     </div>
   );
