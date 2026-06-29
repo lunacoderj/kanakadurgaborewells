@@ -77,7 +77,7 @@ export default function ContactUs() {
       icon: MapPin,
       title: "Headquarters",
       value: "Visakhapatnam",
-      href: "https://maps.app.goo.gl/b6DgeMr6psycnPCd7",
+      href: "https://maps.app.goo.gl/h7VAqaf3pAhKUaio7",
       color: "from-purple-400 to-purple-600"
     }
   ];
@@ -301,10 +301,11 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Central Headquarters</h3>
-                  <p className="text-slate-400 leading-relaxed">
-                    12-34, Main Road, Gajuwaka,<br />
-                    Visakhapatnam, Andhra Pradesh<br />
-                    530026
+                  <p className="text-slate-400 leading-relaxed text-sm">
+                    Door Number :M1, Petrol Bunk, A Zone,<br />
+                    Sujatha Nagar, Pendurthi,<br />
+                    Visakhapatnam, Lakshmi Puram,<br />
+                    Andhra Pradesh 530051
                   </p>
                   <div className="mt-6 flex items-center gap-2 text-sm text-cyan-400 font-medium">
                     <Clock className="w-4 h-4" />

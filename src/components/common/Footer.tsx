@@ -83,7 +83,7 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4 pt-2">
               {[
-                { icon: MapPin, href: "https://maps.app.goo.gl/b6DgeMr6psycnPCd7", color: "hover:text-blue-500 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]", label: "Google Maps", target: "_blank" },
+                { icon: MapPin, href: "https://maps.app.goo.gl/h7VAqaf3pAhKUaio7", color: "hover:text-blue-500 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]", label: "Google Maps", target: "_blank" },
                 { icon: Phone, href: "tel:+917998998889", color: "hover:text-pink-500 hover:shadow-[0_0_10px_rgba(236,72,153,0.5)]", label: "Call Us" },
                 { icon: FaWhatsapp, href: "https://wa.me/917998998889", color: "hover:text-green-400 hover:shadow-[0_0_10px_rgba(74,222,128,0.5)]", label: "WhatsApp", target: "_blank" },
                 { icon: ClipboardList, href: "#quote", color: "hover:text-yellow-400 hover:shadow-[0_0_10px_rgba(250,204,21,0.5)]", label: "Get Quote" }
@@ -161,8 +161,8 @@ export const Footer = () => {
                 <div className="w-10 h-10 rounded-lg bg-cyan-950/40 border border-cyan-800/50 flex items-center justify-center flex-shrink-0 group-hover:border-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.3)] transition-all">
                   <MapPin className="w-5 h-5 text-cyan-400" />
                 </div>
-                <a href="https://maps.app.goo.gl/b6DgeMr6psycnPCd7" target="_blank" rel="noopener noreferrer" className="text-sm text-cyan-100/70 group-hover:text-cyan-400 transition-colors mt-1">
-                  12-34, Main Road, Gajuwaka,<br />Visakhapatnam, AP - 530026
+                <a href="https://maps.app.goo.gl/h7VAqaf3pAhKUaio7" target="_blank" rel="noopener noreferrer" className="text-sm text-cyan-100/70 group-hover:text-cyan-400 transition-colors mt-1">
+                  Door Number :M1, Petrol Bunk, A Zone, Sujatha Nagar,<br />Pendurthi, Visakhapatnam, Lakshmi Puram, AP 530051
                 </a>
               </li>
               <li className="flex items-center gap-4 group">

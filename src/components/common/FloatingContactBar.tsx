@@ -13,7 +13,7 @@ export const FloatingContactBar = () => {
       id: 'call',
       icon: <Phone size={22} />,
       label: 'Call Now',
-      href: 'tel:+919876543210',
+      href: 'tel:+917998998889',
       color: 'from-amber-400 to-orange-500',
       glowColor: 'rgba(249, 115, 22, 0.4)', // orange-500
       borderColor: 'border-orange-500/50'
@@ -22,7 +22,7 @@ export const FloatingContactBar = () => {
       id: 'whatsapp',
       icon: <MessageCircle size={22} />,
       label: 'WhatsApp',
-      href: 'https://wa.me/919876543210?text=Hi%20Kanakadurga,%20I%20need%20borewell%20services.',
+      href: 'https://wa.me/917998998889?text=Hi%20Kanakadurga,%20I%20need%20borewell%20services.',
       color: 'from-emerald-400 to-green-600',
       glowColor: 'rgba(16, 185, 129, 0.4)', // emerald-500
       borderColor: 'border-emerald-500/50',

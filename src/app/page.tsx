@@ -12,6 +12,7 @@ const TestimonialsSection = dynamic(() => import("@/components/sections/Testimon
 const ServiceAreasSection = dynamic(() => import("@/components/sections/ServiceAreasSection").then(m => m.ServiceAreasSection), { loading: () => <SplitSkeleton /> });
 const FaqSection = dynamic(() => import("@/components/sections/FaqSection").then(m => m.FaqSection), { loading: () => <SplitSkeleton /> });
 const CtaSection = dynamic(() => import("@/components/sections/CtaSection").then(m => m.CtaSection), { loading: () => <SplitSkeleton /> });
+const BorewellShowcaseSection = dynamic(() => import("@/components/sections/BorewellShowcaseSection").then(m => m.BorewellShowcaseSection), { loading: () => <GenericGridSkeleton /> });
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <TrustFeaturesSection />
       <div id="services"><ServicesSection /></div>
       <div id="about-us"><WhyChooseUsSection /></div>
+      <BorewellShowcaseSection />
       <OurWorksSection />
       <div id="projects"><ProjectsSection /></div>
       <div id="equipments"><EquipmentsSection /></div>
