@@ -128,51 +128,54 @@ export const ServiceAreasSection = () => {
               {/* Radar Sweep line */}
               <div className="absolute w-1/2 h-1 bg-gradient-to-r from-transparent to-blue-500/50 origin-left top-1/2 left-1/2 animate-[spin_4s_linear_infinite] shadow-[0_0_30px_rgba(59,130,246,0.8)]" />
 
-              {/* Map Base Image (Optional) */}
-              {/* We can use the existing map image with a blend mode for a tech feel */}
-              <div 
-                 className="absolute inset-8 bg-contain bg-no-repeat bg-center opacity-40 mix-blend-multiply drop-shadow-2xl filter contrast-125 hue-rotate-15"
-                 style={{ backgroundImage: `url('https://gf2wtazfdibnozca.public.blob.vercel-storage.com/india-map-graphic.png')` }}
-               />
+              {/* Map & Nodes Container */}
+              <div className="relative w-[85%] max-w-[500px] aspect-square flex items-center justify-center">
+                {/* Map Base Image */}
+                <img 
+                  src="https://gf2wtazfdibnozca.public.blob.vercel-storage.com/india-map-graphic.png" 
+                  alt="India Map"
+                  className="absolute inset-0 w-full h-full object-contain opacity-40 mix-blend-multiply drop-shadow-2xl filter contrast-125 hue-rotate-15"
+                />
 
-              {/* Data Nodes */}
-              {locations.map((loc, i) => {
-                const isHovered = hoveredLoc === loc.name;
-                const isHQ = loc.type === 'hq';
-                
-                return (
-                  <motion.div
-                    key={`node-${i}`}
-                    className="absolute z-20"
-                    style={{ left: loc.coords.x, top: loc.coords.y }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.1, type: 'spring' }}
-                  >
-                    {/* Node Core */}
-                    <div className="relative">
-                      {isHQ && (
-                        <div className="absolute -inset-4 bg-yellow-400/20 rounded-full animate-ping" style={{ animationDuration: '2s' }} />
-                      )}
-                      
-                      <div className={`relative w-4 h-4 rounded-full border-2 border-white shadow-[0_0_15px_rgba(59,130,246,0.8)] cursor-pointer transition-transform duration-300 ${
-                        isHovered ? 'scale-150 bg-yellow-400' : 
-                        isHQ ? 'bg-yellow-500 scale-125' : 'bg-blue-500 hover:scale-125'
-                      }`}
-                      onMouseEnter={() => setHoveredLoc(loc.name)}
-                      onMouseLeave={() => setHoveredLoc(null)}
-                      />
-                      
-                      {/* Node Label Tooltip-style */}
-                      <div className={`absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-lg bg-white/90 backdrop-blur-md shadow-lg border border-slate-100 font-bold text-sm pointer-events-none transition-all duration-300 ${
-                        isHovered || isHQ ? 'opacity-100 transform-none' : 'opacity-0 translate-y-2'
-                      }`}>
-                        <span className={isHQ ? 'text-yellow-600' : 'text-blue-600'}>{loc.name}</span>
+                {/* Data Nodes */}
+                {locations.map((loc, i) => {
+                  const isHovered = hoveredLoc === loc.name;
+                  const isHQ = loc.type === 'hq';
+                  
+                  return (
+                    <motion.div
+                      key={`node-${i}`}
+                      className="absolute z-20"
+                      style={{ left: loc.coords.x, top: loc.coords.y }}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1, type: 'spring' }}
+                    >
+                      {/* Node Core */}
+                      <div className="relative -translate-x-1/2 -translate-y-1/2">
+                        {isHQ && (
+                          <div className="absolute -inset-4 bg-yellow-400/20 rounded-full animate-ping" style={{ animationDuration: '2s' }} />
+                        )}
+                        
+                        <div className={`relative w-4 h-4 rounded-full border-2 border-white shadow-[0_0_15px_rgba(59,130,246,0.8)] cursor-pointer transition-transform duration-300 ${
+                          isHovered ? 'scale-150 bg-yellow-400' : 
+                          isHQ ? 'bg-yellow-500 scale-125' : 'bg-blue-500 hover:scale-125'
+                        }`}
+                        onMouseEnter={() => setHoveredLoc(loc.name)}
+                        onMouseLeave={() => setHoveredLoc(null)}
+                        />
+                        
+                        {/* Node Label Tooltip-style */}
+                        <div className={`absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-lg bg-white/90 backdrop-blur-md shadow-lg border border-slate-100 font-bold text-sm pointer-events-none transition-all duration-300 ${
+                          isHovered || isHQ ? 'opacity-100 transform-none' : 'opacity-0 translate-y-2'
+                        }`}>
+                          <span className={isHQ ? 'text-yellow-600' : 'text-blue-600'}>{loc.name}</span>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                    </motion.div>
+                  );
+                })}
+              </div>
 
               {/* Floating Tech Data Panels */}
               <motion.div 
